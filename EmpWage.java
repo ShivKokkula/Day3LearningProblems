@@ -3,6 +3,7 @@ package EmpWage;
 public class EmpWage {
 
 	static final int IS_FULL_TIME = 1;
+	static final int IS_PART_TIME = 2;
 	static final int EMP_RATE_PER_HOUR = 20;
 
 	public static void main(String[] args) {
@@ -19,13 +20,15 @@ public class EmpWage {
 		
 		int empHrs = 0;
 		
-		int empCheck = (int) (Math.floor(Math.random() * 10) % 2);
+		int empCheck = (int) (Math.floor(Math.random() * 10) % 3);
 		
 		if (empCheck == IS_FULL_TIME) {
-			System.out.println("Employ Present");
+			System.out.println("Employ Present: Full Time");
 			empHrs = 8;
+		}else if(empCheck == IS_PART_TIME){
+			empHrs = 4;
+			System.out.println("Employ Present: Part Time");
 		}else {
-			
 			System.out.println("Employ Absent");
 		}
 		
