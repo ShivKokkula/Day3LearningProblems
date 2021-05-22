@@ -22,14 +22,20 @@ public class EmpWage {
 		
 		int empCheck = (int) (Math.floor(Math.random() * 10) % 3);
 		
-		if (empCheck == IS_FULL_TIME) {
+		switch(empCheck) {
+		case IS_FULL_TIME:
 			System.out.println("Employ Present: Full Time");
 			empHrs = 8;
-		}else if(empCheck == IS_PART_TIME){
-			empHrs = 4;
+			break;
+		case IS_PART_TIME:
 			System.out.println("Employ Present: Part Time");
-		}else {
+			empHrs = 4;
+			break;
+			
+		default:
 			System.out.println("Employ Absent");
+			empHrs = 0;
+			break;
 		}
 		
 		return empHrs;
